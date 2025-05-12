@@ -6,60 +6,48 @@
 #include "SDL/SDL_ttf.h"
 
 
- 
+/**
+* @struct vie
+* @brief struct for vie
+*/ 
 typedef struct {
-    SDL_Surface *spriteVie;  // ton image de cœur, par ex.
-    SDL_Rect    posVie;      // où l’afficher
-    int         nbVies;      // nombre de vies actuelles
+    SDL_Surface *spriteVie;/*!< surface*/   
+    SDL_Rect    posVie;    /*!< rectangle*/    
+    int         nbVies;    /*!< int*/    
 } vie;
-
+/**
+* @struct score
+* @brief struct for score
+*/ 
 typedef struct  {
-    TTF_Font   *police;      // la police pour le texte
-    SDL_Color   couleur;     // couleur du texte
-    SDL_Rect    posScore;    // où l’afficher
-    int         points;      // valeur du score
+    TTF_Font   *police; /*!< texte*/       
+    SDL_Color   couleur;  /*!< couleur*/     
+    SDL_Rect    posScore; /*!< rectangle*/    
+    int         points;   /*!< int*/    
 } score;
-
+/**
+* @struct personnage
+* @brief struct for personnage
+*/ 
 typedef struct {
-    SDL_Rect position;
-    SDL_Surface *sprite;
-     vie         v;          // la struct vie
-    score       s;          // la struct score;
-    double vitesse;
-    double acceleration;
-    int sol;
+    SDL_Rect position;/*!< rectangle*/
+    SDL_Surface *sprite;/*!< surface*/
+     vie         v;   /*!< vie*/       // la struct vie
+    score       s;   /*!< score*/       // la struct score;
+    double vitesse;/*!< double*/
+    double acceleration;/*!< double*/
+    int sol;/*!< int*/
 } personnage;
 
-typedef struct {
-    SDL_Surface *spriteVie;  // ton image de cœur, par ex.
-    SDL_Rect    posVie;      // où l’afficher
-    int         nbVies;      // nombre de vies actuelles
-} vie_ennemi;
-
-typedef struct  {
-    TTF_Font   *police;      // la police pour le texte
-    SDL_Color   couleur;     // couleur du texte
-    SDL_Rect    posScore;    // où l’afficher
-    int         points;      // valeur du score
-} score_ennemi;
-
-typedef struct {
-    SDL_Rect position;
-    SDL_Surface *sprite;
-    vie_ennemi         v;          // la struct vie
-    score_ennemi       s;          // la struct score;
-    double vitesse;
-    double acceleration;
-    int sol;
-} ennemi;
+ 
 
 void initialiser_personnage(personnage *p);
-void initialiser_ennemi(ennemi *e);
-void afficher_perso(personnage p, SDL_Surface *ecran, SDL_Surface *background, SDL_Rect positionFond);
-void afficher_ennemi(ennemi e, SDL_Surface *ecran, SDL_Surface *background, SDL_Rect positionFond);
+ 
+void afficher_perso( personnage p, SDL_Surface *ecran);
+void animperso2(int *i, SDL_Event *event, personnage *p); 
 void animperso(int *i, SDL_Event *event, personnage *p);
 void jump(personnage *p);
 void deplacerperso(personnage *p, int *continuer, SDL_Event *event);
- 
+void deplacerperso2(personnage *p, int *continuer, SDL_Event *event); 
 
 #endif
