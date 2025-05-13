@@ -39,9 +39,10 @@
 
     // Initialisation des vies
     p->v.nbVies = 3;  // Par exemple, 3 vies au départ
-    p->v.posVie.x = 300;
-    p->v.posVie.y = 20;
+    p->v.posVie.x = 830;
+    p->v.posVie.y = 10;
     p->v.spriteVie = IMG_Load("coeur.png");
+    
     if (p->v.spriteVie == NULL) {
         printf("Erreur chargement sprite vie : %s\n", IMG_GetError());
     }
@@ -77,7 +78,7 @@
         SDL_Rect pos = p.v.posVie;
         for (int i = 0; i < p.v.nbVies; i++) {
             SDL_BlitSurface(p.v.spriteVie, NULL, ecran, &pos);
-            pos.x += p.v.spriteVie->w + 5;  // Espace entre les cœurs
+            pos.x += p.v.spriteVie->w -35;  // Espace entre les cœurs
         }
     }
 
@@ -96,7 +97,11 @@
     }
 }
  
-
+/**
+* @brief pour annimer perso p avec les fleches.
+* @param i ,event ,personnage p
+* @return Nothing
+*/
 void animperso(int *i, SDL_Event *event, personnage *p)
 {
     char ch[20];
@@ -124,6 +129,11 @@ void animperso(int *i, SDL_Event *event, personnage *p)
             break;
     }
 }
+/**
+* @brief pour annimer perso p2 avec les boutons(z-q-s-d).
+* @param i ,event ,personnage p2
+* @return Nothing
+*/
 void animperso2(int *i, SDL_Event *event, personnage *p)
 {
     char ch[20];
@@ -153,14 +163,23 @@ void animperso2(int *i, SDL_Event *event, personnage *p)
             break;
     }
 }
-
+/**
+* @brief pour sauter.
+* @param personnage p2
+* @return Nothing
+*/
  void jump (personnage *p)
 { //int gravite = 1 ;
   
 while( p->position.y!= p->sol) 
  p->position.y+=p->vitesse;
-;}  
-        void deplacerperso(personnage *p, int *continuer, SDL_Event *event)
+;}
+/**
+* @brief pour deplacer perso p avec les fleches.
+* @param i ,event ,personnage p
+* @return Nothing
+*/  
+void deplacerperso(personnage *p, int *continuer, SDL_Event *event)
 {
     static double vitesse_y = 0;           // Vitesse verticale pour le saut
     const double gravite = 0.5;            // Gravité
@@ -241,6 +260,11 @@ while( p->position.y!= p->sol)
 
      
 }
+/**
+* @brief pour deplacer perso p2 avec les boutons(z-q-s-d).
+* @param i ,event ,personnage p2
+* @return Nothing
+*/
 void deplacerperso2(personnage *p, int *continuer, SDL_Event *event)
 {
     static double vitesse_y = 0;

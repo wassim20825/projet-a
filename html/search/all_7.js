@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['s',['s',['../structpersonnage.html#a8cb3dd8738814d4c5781fee57d202fe8',1,'personnage']]],
-  ['score',['score',['../structscore.html',1,'']]],
-  ['score_5fennemi',['score_ennemi',['../structscore__ennemi.html',1,'']]],
-  ['sol',['sol',['../structpersonnage.html#a76c14af05586e60f0f0d94fe12e5eec1',1,'personnage']]],
-  ['sprite',['sprite',['../structpersonnage.html#a8adbc94f4634e562d2499a96c9513102',1,'personnage']]],
-  ['spritevie',['spriteVie',['../structvie.html#a571403c1f316ecb6cab32c1c7e6b4296',1,'vie']]]
+  ['projet_2da',['projet-a',['../md_README.html',1,'']]],
+  ['perso_2ec',['perso.c',['../perso_8c.html',1,'']]],
+  ['personnage',['personnage',['../structpersonnage.html',1,'']]],
+  ['points',['points',['../structscore.html#ae52021c1e14b8a91c49bfb6166788467',1,'score']]],
+  ['police',['police',['../structscore.html#ad67d6e549ef8a3acb864764a6378f7d8',1,'score']]],
+  ['position',['position',['../structpersonnage.html#a61610340e31478c209cbc3fe2d746016',1,'personnage']]],
+  ['posscore',['posScore',['../structscore.html#a734e38cad2ceb3ff0fbc1651fc7df861',1,'score']]],
+  ['posvie',['posVie',['../structvie.html#ae0abed7be46f1f8a6a1750e4863e2841',1,'vie']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ennemi',['ennemi',['../structennemi.html',1,'']]]
+  ['personnage',['personnage',['../structpersonnage.html',1,'']]]
 ];
