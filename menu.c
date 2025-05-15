@@ -1,3 +1,13 @@
+/**
+* @file menu.c
+* @brief integration finale.
+* @author wassim saidi et arslene chouikh
+* @version 0.1
+* @date Mai 13, 2025
+*
+* Code integration final
+*
+*/
 // menu.c
 // SDL 1.2 menu implementation for appearance/input selection
 #include <SDL/SDL.h>
@@ -19,12 +29,16 @@
 // Button identifiers
 enum ButtonType { APPEARANCE1, APPEARANCE2, INPUT1, INPUT2, CONFIRM };
 
+/**
+* @struct Button
+* @brief struct for Button
+*/
 // Button structure
 typedef struct {
-    SDL_Rect rect;
-    SDL_Surface* normal;
-    SDL_Surface* highlighted;
-    bool selected;
+    SDL_Rect rect;/*!< rectangle*/
+    SDL_Surface* normal;/*!< surface*/
+    SDL_Surface* highlighted;/*!< surface*/
+    bool selected;/*!< booleen*/
 } Button;
 
 // Button image filenames
@@ -99,7 +113,11 @@ int load_scores(ScoreEntry* entries, int max);
 int cmp_score(const void* a, const void* b);
 void show_score_menu(int final_score);
 void show_best_scores();
-
+/**
+* @brief To draw_menu.
+* @param screen,background,buttons
+* @return Nothing
+*/
 void draw_menu(SDL_Surface* screen, SDL_Surface* bg, Button* buttons) {
     SDL_BlitSurface(bg, NULL, screen, NULL);
     for (int i = 0; i < BUTTON_COUNT; ++i) {
@@ -109,7 +127,11 @@ void draw_menu(SDL_Surface* screen, SDL_Surface* bg, Button* buttons) {
     }
     SDL_Flip(screen);
 }
-
+/**
+* @brief To handle_menu.
+* @param  
+* @return int 0
+*/
 int handle_menu() {
     SDL_Surface* screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_HWSURFACE);
     SDL_Surface* bg = IMG_Load("menu/background.png");
@@ -169,7 +191,11 @@ int handle_menu() {
     SDL_FreeSurface(bg);
     return 0;
 }
-
+/**
+* @brief To affiche the perso p.
+* @param p personnage ,ecran,background,position
+* @return Nothing
+*/
 void draw_fade_and_text(SDL_Surface* screen, int alpha, const char* text, SDL_Color color, TTF_Font* font) {
     SDL_Surface* fade = SDL_CreateRGBSurface(SDL_SWSURFACE, SCREEN_WIDTH, SCREEN_HEIGHT, 32,
         0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
